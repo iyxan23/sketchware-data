@@ -1,0 +1,9 @@
+Valid Types:
+ - 0: LinearLayout
+ - 4: TextView
+ - 6: ImageView
+ - 12: ScrollView
+ - 16: Fab? (unsure)
+
+Modded Types:
+ - 36: CardView
