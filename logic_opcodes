@@ -19,6 +19,7 @@ addListMap
 insertListMap
 setListMap
 getAtListMap
+getAtListStr
 addMapToList
 insertMapToList
 getMapInList
@@ -193,3 +194,17 @@ stringEquals
 stringContains
 getArg
 definedFunc
+startActivity
+finishActivity
+timerAfter
+timerEvery
+setTitle
+intentGetString
+intentSetAction
+intentSetScreen
+calendarGetNow
+calendarFormat
+getPublicDir
+fileutilisdir
+filepickerstartpickfiles
+vibratorAction
