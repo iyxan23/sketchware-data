@@ -1,9 +1,19 @@
 Valid Types:
  - 0: LinearLayout
+ - 2: Horizontal ScrollView
+ - 3: Button
  - 4: TextView
+ - 5: EditText
  - 6: ImageView
- - 12: ScrollView
- - 16: Fab? (unsure)
+ - 8: ProgressBar
+ - 9: ListView
+ - 10: Spinner
+ - 11: CheckBox
+ - 12: Vertical ScrollView
+ - 13: Switch
+ - 14: SeekBar
+ - 15: CalendarView
+ - 16: Fab
 
 Modded Types:
  - 36: CardView
