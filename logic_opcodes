@@ -202,6 +202,7 @@ setTitle
 intentGetString
 intentSetAction
 intentSetScreen
+intentSetData
 calendarGetNow
 calendarFormat
 getPublicDir
