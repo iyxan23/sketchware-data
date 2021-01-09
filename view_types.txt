@@ -1,6 +1,6 @@
 Valid Types:
  - 0: LinearLayout
- - 1: AdView? (unsure)
+ - 1: Unknown
  - 2: Horizontal ScrollView
  - 3: Button
  - 4: TextView
