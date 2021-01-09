@@ -1,5 +1,6 @@
 Valid Types:
  - 0: LinearLayout
+ - 1: AdView? (unsure)
  - 2: Horizontal ScrollView
  - 3: Button
  - 4: TextView
@@ -14,3 +15,5 @@ Valid Types:
  - 14: SeekBar
  - 15: CalendarView
  - 16: Fab
+ - 17: AdView? (unsure)
+ - 18: MapView
