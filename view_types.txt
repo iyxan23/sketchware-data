@@ -14,6 +14,3 @@ Valid Types:
  - 14: SeekBar
  - 15: CalendarView
  - 16: Fab
-
-Modded Types:
- - 36: CardView
