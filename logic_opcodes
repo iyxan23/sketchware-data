@@ -209,3 +209,12 @@ getPublicDir
 fileutilisdir
 filepickerstartpickfiles
 vibratorAction
+mediaplayerCreate
+mediaplayerStart
+mediaplayerPause
+objectanimatorIsRunning
+objectanimatorCancel
+objectanimatorSetTarget
+objectanimatorSetProperty
+objectanimatorSetFromTo
+objectanimatorSetDuration
