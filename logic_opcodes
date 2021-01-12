@@ -218,3 +218,5 @@ objectanimatorSetTarget
 objectanimatorSetProperty
 objectanimatorSetFromTo
 objectanimatorSetDuration
+stringLength
+copyToClipboard
