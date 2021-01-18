@@ -15,5 +15,5 @@ Valid Types:
  - 14: SeekBar
  - 15: CalendarView
  - 16: Fab
- - 17: AdView? (unsure)
+ - 17: AdView
  - 18: MapView
