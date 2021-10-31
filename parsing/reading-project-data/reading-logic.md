@@ -46,15 +46,15 @@ There are two types of containers, activity containers, and event implementation
    There are 5 types of activity containers:
    - [Variable container](#variable-container) (ends off with `.java_var`)
    - [List variable container](#list-container) (ends off with `.java_list`)
-   - Function / MoreBlock container (ends off with `.java_func`)
+   - [Function / MoreBlock container](#moreblock-container) (ends off with `.java_func`)
    - Component container (ends off with `.java_components`)
    - Event container (ends off with `.java_events`)
 
- - Event implementation containers
+ - Block containers
 
-   An event implementation container (EIC for short) is a container that contains blocks which implements an event that is declared in the event container of the current activity. The event which an EIC implements can be seen from its header's container info (after the dot).
+   A block container is a container that contains blocks which implements an event / moreblock that is declared in the event container (for events) / moreblock / func container (for moreblocks) of the current activity. The event / moreblock which this container implements can be seen from its header's container info (`@ActivityName.{}`).
 
-   Simple words: An event container declares that an event exists, and EIC basically implements that event with block code
+   Simple words: An event container declares that an event exists, and this type of containers basically implements that event with block code and same goes for moreblocks.
 
 ### Variable container
 Variable container contains variables defined in the global scope.
@@ -111,4 +111,39 @@ We parse this as:
 ```java
 ArrayList<String> wifi_names = new ArrayList<>();
 ArrayList<String> bluetooth_names = new ArrayList<>();
+```
+
+### MoreBlock container
+A MoreBlock container contains all the information of every moreblocks that is included in the project. Do note that its implementation / blocks are stored in a block container (that points to the moreblock defined here).
+
+A moreblock item is basically structured like this: `{name}:{spec}`, quite similar to a variable / list variable.
+
+If you don't know, a spec is a **spec**ification of a block, [read this document for more information](../reading-spec.md)
+
+An example of a moreblock container in the wild:
+```
+@MainActivity.java_func
+setStatusBarColor:setStatusBarColor %s.color
+setActionBarColor:setActionBarColor %s.color
+
+@MainActivity.java_setStatusBarColor_moreBlock
+{"color":-10701022, ... "typeName":""}
+...
+...
+
+@MainActivity.java_setActionBarColor_moreBlock
+{"color":-10701022, ... "typeName":""}
+...
+...
+```
+
+We parse this as:
+```
+void setStatusBarColor(String color) {
+    // ... [insert implementation from the block container that implements this moreblock]
+}
+
+void setActionColor(String color) {
+    // ... [insert implementation from the block container that implements this moreblock]
+}
 ```
