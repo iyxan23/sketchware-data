@@ -47,7 +47,7 @@ There are two types of containers, activity containers, and event implementation
    - [Variable container](#variable-container) (ends off with `.java_var`)
    - [List variable container](#list-container) (ends off with `.java_list`)
    - [Function / MoreBlock container](#moreblock-container) (ends off with `.java_func`)
-   - Component container (ends off with `.java_components`)
+   - [Component container](#component-container) (ends off with `.java_components`)
    - Event container (ends off with `.java_events`)
 
  - Block containers
@@ -146,4 +146,36 @@ void setStatusBarColor(String color) {
 void setActionColor(String color) {
     // ... [insert implementation from the block container that implements this moreblock]
 }
+```
+
+### Component container
+A component container contains all the components that are indcluded in the project, for example: Dialog, Intent, TextToSpeech, etc.
+
+The items of this container are basically JSON objects that represents every components that is included in the project.
+
+The JSON fields of the items of a component container:
+| Type    | Name          | Description |
+| ------- | ------------- | ----------- |
+| String  | `componentId` | The component name given by the user |
+| String  | `param1`      | Contains information depending on the component type, see [this document](../../data/component-types.md) for more details |
+| String  | `param2`      | Contains information depending on the component type, see [this document](../../data/component-types.md) for more details |
+| String  | `param3`      | Contains information depending on the component type, see [this document](../../data/component-types.md) for more details |
+| Integer | `type`        | The type of the current component, all component types can be seen [on this document](../../data/component-types.md) |
+
+An example component container in the wild:
+```
+@MainActivity.java_components
+{"componentId":"intent","param1":"","param2":"","param3":"","type":1}
+{"componentId":"sp","param1":"file","param2":"","param3":"","type":2}
+{"componentId":"dialog","param1":"file","param2":"","param3":"","type":7}
+```
+
+Expected result:
+```
+Intent intent;
+SharedPreferences sp;
+AlertDialog.Dialog dialog;
+
+// somewhere in initialization
+sp = getSharedPreferences("file", Context.MODE_PRIVATE);
 ```
