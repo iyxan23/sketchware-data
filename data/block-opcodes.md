@@ -25,14 +25,14 @@ This document contains all of sketchware's blocks' opcodes (version 150)
 | true | b |
 | false | b |
 | < | b |
-| URLEncodedUtils.NAME_VALUE_SEPARATOR | b |
+| = | b |
 | > | b |
 | && | b |
 | \|\| | b |
 | not | b |
 | + | d |
 | - | d |
-| MediaType.WILDCARD | d |
+| * | d |
 | / | d |
 | % | d |
 | random | d |
@@ -48,7 +48,7 @@ This document contains all of sketchware's blocks' opcodes (version 150)
 | toUpperCase | s |
 | toLowerCase | s |
 | toNumber | d |
-| nnotationHandler.STRIN | s |
+| toString | s |
 | toStringWithDecimal | s |
 | toStringFormat | s |
 | strToMap |   |
