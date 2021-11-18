@@ -1,26 +1,30 @@
 # Block opcodes
 This document contains all of sketchware's blocks' opcodes (version 150)
 
-## Return types
-| Return type | Description |
-| ----------- | ----------- |
-| b           | boolean     |
-| s           | String      |
-| d           | Decimal     |
+## Types
+A block type defines what a block type returns (bool, string, int) / what the block is (single/double-nested block, ending block). A block that doesn't have a type is a regular block.
+| Type | Description           |
+| ---- | --------------------- |
+| b    | Boolean               |
+| s    | String                |
+| d    | Decimal / Number      |
+| c    | A single-nested block |
+| e    | A double-nested block |
+| f    | "An ending block" A block that can't have another block after it |
 
 ## Block categories
 
 ### Control flow
-| Opcode  | Return type |
-| ------- | ----------- |
-| repeat  | c           |
-| forever | c           |
-| break   | f           |
-| if      | c           |
-| ifElse  | e           |
+| Opcode  | Type |
+| ------- | ---- |
+| repeat  | c    |
+| forever | c    |
+| break   | f    |
+| if      | c    |
+| ifElse  | e    |
 
 ### Operators
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | true | b |
 | false | b |
@@ -58,7 +62,7 @@ This document contains all of sketchware's blocks' opcodes (version 150)
 | addSourceDirectly |   |
 
 ### Math
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | mathGetDip | d |
 | mathGetDisplayWidth | d |
@@ -86,7 +90,7 @@ This document contains all of sketchware's blocks' opcodes (version 150)
 | mathToDegree | d |
 
 ### File operations
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | fileutilread | s |
 | fileutilwrite |   |
@@ -121,7 +125,7 @@ This document contains all of sketchware's blocks' opcodes (version 150)
 
 Only if there is a drawer in the activity:
 
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | isDrawerOpen | b |
 | openDrawer |   |
@@ -129,7 +133,7 @@ Only if there is a drawer in the activity:
 
 Always on:
 
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | setEnable |   |
 | getEnable | b |
@@ -171,7 +175,7 @@ Always on:
 
 View-specific opcodes:
 
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | listSetData |   |
 | listSetCustomViewData |   |
@@ -199,13 +203,13 @@ View-specific opcodes:
 
 Only if admob is enabled:
 
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | adViewLoadAd |   |
 
 Only if Google Map is enabled:
 
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | mapViewSetMapType |   |
 | mapViewMoveCamera |   |
@@ -220,7 +224,7 @@ Only if Google Map is enabled:
 | mapViewSetMarkerVisible |   |
 
 ### Component blocks
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | doToast |   |
 | copyToClipboard |   |
@@ -228,7 +232,7 @@ Only if Google Map is enabled:
 
 #### Intent
 
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | intentSetAction |   |
 | intentSetData |   | 
@@ -237,7 +241,7 @@ Only if Google Map is enabled:
 
 Only if there are multiple activities:
 
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | intentSetScreen |   |
 | intentPutExtra |   |
@@ -245,14 +249,14 @@ Only if there are multiple activities:
 | finishActivity | f |
 
 #### Unknown
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | fileGetData | s |
 | fileSetData |   |
 | fileRemoveData |   |
 
 #### Calendar
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | calendarGetNow |   |
 | calendarAdd |   |
@@ -263,19 +267,19 @@ Only if there are multiple activities:
 | calendarSetTime |   |
 
 #### Vibrator
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | vibratorAction |   |
 
 #### Timer
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | timerAfter | c |
 | timerEvery | c |
 | timerCancel |   |
 
 #### Dialog
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | dialogSetTitle |   |
 | dialogSetMessage |   |
@@ -286,7 +290,7 @@ Only if there are multiple activities:
 
 #### mediaplayer component
 
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | mediaplayerCreate |   |
 | mediaplayerStart |   |
@@ -301,7 +305,7 @@ Only if there are multiple activities:
 | mediaplayerRelease |   |
 
 #### SoundPool
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | soundpoolCreate |   |
 | soundpoolLoad | d |
@@ -309,7 +313,7 @@ Only if there are multiple activities:
 | soundpoolStreamStop |   |
 
 #### ObjectAnimator
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | objectanimatorSetTarget |   |
 | objectanimatorSetProperty |   |
@@ -324,7 +328,7 @@ Only if there are multiple activities:
 | objectanimatorIsRunning | b |
 
 #### Firebase Database
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | firebaseAdd |   |
 | firebasePush |   |
@@ -335,7 +339,7 @@ Only if there are multiple activities:
 | firebaseStopListen |   |
 
 #### Firebase Auth
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | firebaseauthCreateUser |   |
 | firebaseauthSignInUser |   |
@@ -347,44 +351,44 @@ Only if there are multiple activities:
 | firebaseauthSignOutUser |   |
 
 #### Gyroscope
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | gyroscopeStartListen |   |
 | gyroscopeStopListen |   |
 
 #### AdMob
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | interstitialadCreate |   |
 | interstitialadLoadAd |   |
 | interstitialadShow |   |
 
 #### Firebase Storage
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | firebasestorageUploadFile |   |
 | firebasestorageDownloadFile |   |
 | firebasestorageDelete |   |
 
 #### Camera
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | camerastarttakepicture |   |
 
 #### FilePicker
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | filepickerstartpickfiles |   |
 
 #### Requestnetwork
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | requestnetworkSetParams |   |
 | requestnetworkSetHeaders |   |
 | requestnetworkStartRequestNetwork |   |
 
 #### TextToSpeech
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | textToSpeechSetPitch |   |
 | textToSpeechSetSpeechRate |   |
@@ -394,14 +398,14 @@ Only if there are multiple activities:
 | textToSpeechShutdown |   |
 
 #### SpeechToText
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | speechToTextStartListening |   |
 | speechToTextStopListening |   |
 | speechToTextShutdown |   |
 
 #### BluetoothManager
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | bluetoothConnectReadyConnection |   |
 | bluetoothConnectReadyConnectionToUuid |   |
@@ -416,7 +420,7 @@ Only if there are multiple activities:
 | bluetoothConnectGetRandomUuid | s |
 
 #### LocationManager
-| Opcode | Return type |
+| Opcode | Type |
 | ------ | ----------- |
 | locationManagerRequestLocationUpdates |   |
 | locationManagerRemoveUpdates |   |
