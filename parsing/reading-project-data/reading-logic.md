@@ -52,9 +52,9 @@ There are two types of containers, activity containers, and event implementation
 
  - Block containers
 
-   A block container is a container that contains blocks which implements an event / moreblock that is declared in the event container (for events) / moreblock / func container (for moreblocks) of the current activity. The event / moreblock which this container implements can be seen from its header's container info (`@ActivityName.{}`).
+   A block container is a container that contains blocks which implements an event / moreblock that is declared in the event container (for events) / func container (for moreblocks) of the current activity / screen. The event / moreblock which this container implements can be seen from its header's container info (`@ActivityName.java_{}`).
 
-   Simple words: An event container declares that an event exists, and this type of containers basically implements that event with block code and same goes for moreblocks.
+   Simple words: An block container implements an event / moreblock
 
 ### Variable container
 Variable container contains variables defined in the global scope.
