@@ -57,7 +57,7 @@ There are two types of containers, activity containers, and event implementation
    Simple words: An block container implements an event / moreblock
 
 ### Variable container
-Variable container contains variables defined in the global scope.
+Variable container contains variables defined in the global scope of the current activity / screen.
 
 A variable is structured like this: `{type}:{name}`. Do note that the type is an number representing a type. Here are all the variable types:
 
@@ -114,7 +114,7 @@ ArrayList<String> bluetooth_names = new ArrayList<>();
 ```
 
 ### MoreBlock container
-A MoreBlock container contains all the information of every moreblocks that is included in the project. Do note that its implementation / blocks are stored in a block container (that points to the moreblock defined here).
+A MoreBlock container contains all the information of every moreblocks that exists in the current activity / screen. Do note that its implementation / blocks are stored in a block container (that points to the moreblock defined here).
 
 A moreblock item is basically structured like this: `{name}:{spec}`, quite similar to a variable / list variable.
 
@@ -149,7 +149,7 @@ void setActionColor(String color) {
 ```
 
 ### Component container
-A component container contains all the components that are indcluded in the project, for example: Dialog, Intent, TextToSpeech, etc.
+A component container contains all the components that exists in the current activity / screen, for example: Dialog, Intent, TextToSpeech, etc.
 
 The items of this container are basically JSON objects that represents every components that is included in the project.
 
