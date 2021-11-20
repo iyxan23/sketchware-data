@@ -48,7 +48,7 @@ There are two types of containers, activity containers, and event implementation
    - [List variable container](#list-container) (ends off with `.java_list`)
    - [Function / MoreBlock container](#moreblock-container) (ends off with `.java_func`)
    - [Component container](#component-container) (ends off with `.java_components`)
-   - Event container (ends off with `.java_events`)
+   - [Event list container](#event-list-container) (ends off with `.java_events`)
 
  - Block containers
 
@@ -178,4 +178,29 @@ AlertDialog.Dialog dialog;
 
 // somewhere in initialization
 sp = getSharedPreferences("file", Context.MODE_PRIVATE);
+```
+
+### Event list container
+Quite self-explanatory, an event list container contains a list of events that are implemented in the current screen.
+
+The items of this container is laid out the same as the component container. It's just a list of JSON in lines.
+
+The JSON fields of an event list container:
+| Type    | Name         | Description
+| ------- | ------------ | -----------
+| String  | `eventName`  | The name of the event
+| Integer | `eventType`  | The type of the event (1: view event (ex: onClick), 2: component event (ex: onResponse), 3: activity event (ex: onResume))
+| String  | `targetId`   | The target we want the event to be attached on. If this event is a view event, this will point to a view id. If this event is a component event, this will point to a component event. But, if this event is an activity event, this field is set the same as the event name (I don't know why)
+| Integer | `targetType` | The component type of the target. Will be 0 if this event is not a component type.
+
+An example event list container in the wild:
+```
+@MainActivity.java_events
+{"eventName":"onClick","eventType":1,"targetId":"other_button","targetType":0}
+{"eventName":"onCheckedChange","eventType":1,"targetId":"switch_theme","targetType":13}
+{"eventName":"onResponse","eventType":2,"targetId":"ping_test","targetType":17}
+{"eventName":"onErrorResponse","eventType":2,"targetId":"ping_test","targetType":17}
+{"eventName":"onClick","eventType":1,"targetId":"my_button","targetType":0}
+{"eventName":"onResume","eventType":3,"targetId":"onResume","targetType":0}
+{"eventName":"onBackPressed","eventType":3,"targetId":"onBackPressed","targetType":0}
 ```
