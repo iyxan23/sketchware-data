@@ -191,7 +191,7 @@ The JSON fields of an event list container:
 | String  | `eventName`  | The name of the event
 | Integer | `eventType`  | The type of the event (1: view event (ex: onClick), 2: component event (ex: onResponse), 3: activity event (ex: onResume))
 | String  | `targetId`   | The target we want the event to be attached on. If this event is a view event, this will point to a view id. If this event is a component event, this will point to a component event. But, if this event is an activity event, this field is set the same as the event name (I don't know why)
-| Integer | `targetType` | The component type of the target. Will be 0 if this event is not a component type.
+| Integer | `targetType` | The component / view type of the target. Will be 0 if this event is not a component or a view type.
 
 An example event list container in the wild:
 ```
