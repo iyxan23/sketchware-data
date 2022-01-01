@@ -1,11 +1,11 @@
-| Name            | Color     |
-| --------------- | --------- |
-| var             | -1147626  |
-| list            | -3384542  |
-| control         | -1988310  |
-| operator        | -10701022 |
-| math            | -14435927 |
-| file            | -6190977  |
-| view func       | -11899692 |
-| component func  | -13851166 |
-| moreblock       | -7711273  | 
+| Name            | Color (ARGB) |
+| --------------- | ------------ |
+| var             | `#ffee7d16`  |
+| list            | `#ffcc5b22`  |
+| control         | `#ffe1a92a`  |
+| operator        | `#ff5cb722`  |
+| math            | `#ff23b9a9`  |
+| file            | `#ffa1887f`  |
+| view func       | `#ff4a6cd4`  |
+| component func  | `#ff2ca5e2`  |
+| moreblock       | `#ff8a55d7`  | 
