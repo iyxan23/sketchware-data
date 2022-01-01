@@ -1,9 +1,9 @@
-# Component types
+### Component types
 
 | Type | Name              | param1    | param2 | param3 | Description                                                                                                                                                                                                                           |
 | ---- | ----------------- | --------- | ------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1    | Intent            |           |        |        | Intent is a messaging object used to request an action from another app component, [further details](https://developer.android.com/guide/components/intents-filters)                                                                  |
-| 2    | SharedPreferences |           |        |        | SharedPreferences is an object that points to small xml file stored in the app's private directory, providing a simple read and write APIs, [further details](https://developer.android.com/training/data-storage/shared-preferences) |
+| 2    | SharedPreferences | Data path |        |        | SharedPreferences is an object that points to small xml file stored in the app's private directory, providing a simple read and write APIs, [further details](https://developer.android.com/training/data-storage/shared-preferences) |
 | 3    | Calendar          |           |        |        | Calendar is an object that stores datetime and provides APIs to calculate between a different datetime and more, [further details](https://developer.android.com/reference/java/util/Calendar)                                        |
 | 4    | Vibrator          |           |        |        | Vibrator is an object that provides an API to vibrate the device, [further details](https://developer.android.com/reference/android/os/Vibrator)                                                                                      |
 | 5    | Timer             |           |        |        | Timer is an object that can schedule tasks for one-time execution, or for repeated execution at regular intervals, [further details](https://developer.android.com/reference/java/util/Timer)                                         |
@@ -15,11 +15,17 @@
 | 11   | Gyroscope         |
 | 12   | FirebaseAuth      |
 | 13   | Interstitial Ad   |
-| 14   | Firebase Storage  |
+| 14   | Firebase Storage  | Data path
 | 15   | Camera            |
-| 16   | FilePicker        |
+| 16   | FilePicker        | Mime type
 | 17   | RequestNetwork    |
 | 18   | TextToSpeech      |
 | 19   | SpeechToText      |
 | 20   | BluetoothConnect  |
 | 21   | LocationManager   |
+
+#### Random questions
+
+> Why param2 and param3 are not used?
+
+I'm just as confused as you as why param2 and param3 are not used at all. I believe it's for backwards-compatibility with older sketchware versions that may have a component that uses three parameters.
