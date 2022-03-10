@@ -204,3 +204,7 @@ An example event list container in the wild:
 {"eventName":"onResume","eventType":3,"targetId":"onResume","targetType":0}
 {"eventName":"onBackPressed","eventType":3,"targetId":"onBackPressed","targetType":0}
 ```
+
+Getting a [block container](#types-of-containers) from an event item can be done by mashing the `targetId` and `eventName` together, put an underscore between them and match a block container's "container info" (see the top of the page).
+
+**IMPORTANT NOTE:** the `onCreate` event is **special**, it's not defined as an event in the event list container, but can appear as a block container (if its not empty)
