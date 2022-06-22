@@ -8,9 +8,22 @@ A block type defines what a block type returns (bool, string, int) / what the bl
 | b    | Boolean               |
 | s    | String                |
 | d    | Decimal / Number      |
+| p    | Component             |
+| v    | View                  |
 | c    | A single-nested block |
 | e    | A double-nested block |
 | f    | "An ending block" A block that can't have another block after it |
+
+## The `getVar` block
+The `getVar` block is a special block that can represent accessing not only regular number/string/bool variables, but also views and components.
+
+It's block type is `p` when it accesses a component and `v` if it's a view.
+
+If it's either a `p` or a `v`, the `typeName` field of the block hints the exact type of the variable its accessing.
+
+Examples:
+ - A `getVar` block with type `p` has `typeName` value set to `ObjectAnimator`.
+ - A `getVar` block with type `v` has `typeName` value set to `LinearLayout`.
 
 ## Block categories
 
