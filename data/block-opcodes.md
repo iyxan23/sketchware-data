@@ -3,27 +3,42 @@ This document contains all of sketchware's blocks' opcodes (version 150)
 
 ## Types
 A block type defines what a block type returns (bool, string, int) / what the block is (single/double-nested block, ending block). A block that doesn't have a type is a regular block.
+
 | Type | Description           |
 | ---- | --------------------- |
 | b    | Boolean               |
 | s    | String                |
 | d    | Decimal / Number      |
+| l    | List (any list)       |
 | p    | Component             |
 | v    | View                  |
 | c    | A single-nested block |
 | e    | A double-nested block |
 | f    | "An ending block" A block that can't have another block after it |
 
-## The `getVar` block
-The `getVar` block is a special block that can represent accessing not only regular number/string/bool variables, but also views and components.
 
-It's block type is `p` when it accesses a component and `v` if it's a view.
-
-If it's either a `p` or a `v`, the `typeName` field of the block hints the exact type of the variable its accessing.
+If the block type is a `p` (component) or a `v` (view), the `typeName` field of the block gives the exact type of the variable its accessing.
 
 Examples:
- - A `getVar` block with type `p` has `typeName` value set to `ObjectAnimator`.
- - A `getVar` block with type `v` has `typeName` value set to `LinearLayout`.
+ - Type `p` has `typeName` value set to `ObjectAnimator`.
+ - Type `v` has `typeName` value set to `LinearLayout`.
+
+Lists does the same thing, but the `typeName` is a bit different. They're (exactly) `List String` if the list generic type is a string, `List Number` for numbers, and `List Map` for list maps.
+
+> I really wonder why there isn't any list booleans lol
+
+Examples:
+ - Type `l` has `typeName` value set to `List String` means it returns a list string
+ - Type `l` has `typeName` value set to `List Number` means it returns a list number
+
+## The `getVar` block
+The `getVar` block is a special block that represents variable access of any type through a combination of spec as the variable name, block type, and block `typeName` as the type.
+
+The block type can be any of the block types defined above except the nested and ending block types.
+
+Examples:
+ - Type `b` with spec `isEnabled` represents a variable access of the boolean variable `isEnabled`.
+ - Type `d` with spec `count` represents a variable access of the number variable `count`.
 
 ## Block categories
 
