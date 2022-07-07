@@ -1,7 +1,7 @@
 # Sketchware Versions
 The field `sketchware_ver` apparently is the sketchware app's version code where the project is created.
 
-> Sadly, I don't know what this is used for. If you do know what it is, please do a pull request or hit up an issue!
+My guess is that this is used as a some kind of compatibility check whether a sketchware project is made using a newer version, in which some blocks are not supported?
 
 ## Table
 Here is the table that shows sketchware versions based on their version name:
