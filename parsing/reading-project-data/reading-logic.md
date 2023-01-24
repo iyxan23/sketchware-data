@@ -12,25 +12,25 @@ Example container in the wild:
 Structure of a container:
 ```
 @MainActivity.java_button_onClick
----------------------------------
-              |
+└─────────────┬─────────────────┘
+              │
      The container's header
 
-{"color":-10701022, ... ,"typeName":""} |- Lines of blocks / data depending on the container type
-...                                     |
-...                                     |
+{"color":-10701022, ... ,"typeName":""} ┬─ Lines of blocks / data depending on the container type
+...                                     │
+...                                     │
 ```
 
 Structure of a header:
 ```
 Header indicator          This is what I call as the "container info"
 |                               |
-v             -------------------
+v             ┌─────────────────┤
 @MainActivity.java_button_onClick
- ------------^
- |           |
- |       Separator
- |
+ ├──────────┘^
+ │           │
+ │       Separator
+ │
  On what activity is this container bound to
 ```
 
